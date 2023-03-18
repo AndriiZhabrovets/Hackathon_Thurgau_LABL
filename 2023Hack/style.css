@@ -84,8 +84,9 @@ header ul li a.actives
 }
 .content
 {
-    transform: translate(-100px);
-    max-width: 700px;
+    transform: translate(0px);
+    height: 700px;
+    width: 1300px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     backdrop-filter: blur(10px);
@@ -93,7 +94,10 @@ header ul li a.actives
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     padding:  40px;
-    padding-left:  110px;
+    padding-top: 0px;
+    padding-left:  0px;
+    margin-top: 30px;
+
 }
 .content h2
 {
@@ -220,4 +224,14 @@ header ul li a.actives
 .menu-open{
     display: block;
     opacity: 1;
+}
+
+iframe{
+    height: 660px;
+    width: 1100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 90px;
+
 }
