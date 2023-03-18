@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Ice Cream Picker</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+
+    <py-config>
+      packages = ["matplotlib", "pandas", "geopandas"]
+    </py-config>
+
+    <py-script>
+        import pandas as pd
+
+        source = 'https://data.tg.ch/api/explore/v2.1/catalog/datasets/div-energie-10/exports/csv'
+        
+        # CSV-Daten mit Pandas lesen.
+        # Achtung: wir verwenden Semikolons statt Kommas als Trennzeichen.
+        # header=0 teilt der Funktion mit, dass wir Spaltenheader in der Datei erwarten.
+        energy_dataset = pd.read_table(source, sep=';', header=0)
+        # Wie sehen die Daten aus?
+        energy_dataset
+
+        import geopandas as gpd
+        municipalities = gpd.read_file("../data/towns_fixed.geojson")
+        municipalities
+
+        joined = pd.merge(municipalities, only2020, how="inner", on="bfs_nr_gemeinde")
+        map = joined.explore("einwohner")
+        map
+    </py-script>
+
+    <py-repl>
+      ice_data
+    </py-repl>
+
+    <div id="graph-area"></div>
+  </body>
+</html>
