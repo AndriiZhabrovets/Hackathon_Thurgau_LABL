@@ -18,6 +18,7 @@ section
     background-position: center;
     background-attachment:fixed;
     padding: 50px;
+    overflow: hidden;
 }
 .container
 {
@@ -121,9 +122,19 @@ header ul li a.actives
 .leo{
     display: flex;
     justify-content: center;
-    align-items: center;
+    border-radius: 1em;
+    align-items: top;
     flex-wrap: wrap;
+    overflow: scroll;
+    height: 20em;
 }
+
+.leo::-webkit-scrollbar {
+    display: none;
+}
+
+
+
 
 .dropdown{
     min-width: 15em;
@@ -136,12 +147,12 @@ header ul li a.actives
 }
 
 .select{
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.25);
     color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px #ffffff solid;
+    border: 2px #ffffff transparent;
     border-radius: 0.5em;
     padding: 1em;
     cursor: pointer;
@@ -151,8 +162,8 @@ header ul li a.actives
 /*some js idk*/
 
 .select-clicked{
-    border: 2px #26489a solid;
-    box-shadow: 0 0 0.8em #26489a;
+    border: 2px #add0ae solid;
+    box-shadow: 0 0 0.8em #b0f4ba86;
 }
 
 .select:hover{
@@ -171,11 +182,11 @@ header ul li a.actives
 .menu{
     list-style: none;
     padding: 0.2em 0.5m;
-    background: #323741;
-    border: 1px #323a43 solid;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px rgba(255, 255, 255, 0.25) transparent;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
     border-radius: 0.5em;
-    color: #0044ff;
+    color: #000000;
     position: absolute;
     top: 3em;
     left: 50%;
@@ -195,13 +206,13 @@ header ul li a.actives
 }
 
 .menu li:hover{
-    background: #adadad;
+    background: #ededed;
 }
 
 
 
 .active{
-    background: #23242a;   
+    background: #ffffff;   
 }
 
 /*js*/
